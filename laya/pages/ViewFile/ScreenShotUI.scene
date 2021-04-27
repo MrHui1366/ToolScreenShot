@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":2,
-    "selecteID":130,
+    "selectedBox":130,
+    "selecteID":67,
     "searchKey":"View,ScreenShotUI",
     "props":{"width":750,"top":0,"sceneColor":null,"runtime":"View/view/ScreenShotUI.ts","right":0,"name":"ScreenShotUI","left":0,"height":1334,"bottom":0},
     "nodeParent":-1,
@@ -104,16 +104,17 @@
             "props":{"y":200,"x":0,"width":750,"var":"box_center","height":500},
             "nodeParent":2,
             "label":"box_center",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":130,
             "child":[
                 {
+                    "x":30,
                     "type":"Box",
-                    "searchKey":"Box,role_root",
-                    "props":{"width":270,"var":"role_root","height":434,"centerY":0,"centerX":0},
+                    "searchKey":"Box,role_root,role_root",
+                    "props":{"width":270,"var":"role_root","name":"role_root","height":434,"centerY":0,"centerX":0},
                     "nodeParent":130,
                     "label":"role_root",
                     "isOpen":true,
@@ -127,6 +128,7 @@
                     "$HIDDEN":false
                 },
                 {
+                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,up",
                     "props":{"y":32,"x":240,"name":"up"},
@@ -155,6 +157,7 @@
                     "$LOCKED":true
                 },
                 {
+                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,down",
                     "props":{"y":468,"x":240,"name":"down"},
@@ -183,6 +186,7 @@
                     "$LOCKED":true
                 },
                 {
+                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,left",
                     "props":{"y":32,"x":239,"name":"left"},
@@ -210,6 +214,7 @@
                     "$LOCKED":true
                 },
                 {
+                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,right",
                     "props":{"y":32,"x":511,"name":"right"},

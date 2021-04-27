@@ -97,10 +97,9 @@ export default class Role extends Laya.Script {
             let sk_part = this.sk_parts[ i ];
             sk_part.play( aniName, isLoop );
         }
-        if ( callBack != null ) {
-            this.sk_parts[ 7 ].once( Laya.Event.STOPPED, this, () => {
-                callBack();
-            } );
+        for ( let i = 0; i < this.sk_parts.length; i++ ) {
+            let sk_part = this.sk_parts[ i ];
+            sk_part.stop();
         }
     }
 
@@ -142,7 +141,7 @@ export default class Role extends Laya.Script {
                 skinIndex = 0;
                 break;
         }
-        let nowUseID = PlayerData.clothing[ skinIndex ].inUse;
+        let nowUseID = PlayerData.clothing[ skinIndex ];
         let nowTableData = FashionShopDataManager.getInstance().getDataById( nowUseID );
         return nowTableData.skinName;
     }
