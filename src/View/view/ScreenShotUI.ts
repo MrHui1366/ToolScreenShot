@@ -79,7 +79,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     /** 截图 */
     private screenShot() {
-        let pictrue = this.role_root.drawToCanvas( this.role_root.width, this.role_root.height, 0, 0 );
+        let pictrue = this.role_root.drawToCanvas( this.role_root.width, this.role_root.height, 200, 0 );
         let dataUrl = pictrue.toBase64( "image/png", 0.9 );
         let img = document.createElement( 'img' );
         img.src = dataUrl;
