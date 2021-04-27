@@ -5,6 +5,7 @@ import Game from './Game';
 class Main {
 
 	constructor () {
+		Config.isAlpha = true;
 		//根据IDE设置初始化引擎
 		if ( window[ "Laya3D" ] ) Laya3D.init( GameConfig.width, GameConfig.height );
 		else Laya.init( GameConfig.width, GameConfig.height, Laya[ "WebGL" ] );
@@ -12,12 +13,13 @@ class Main {
 		Laya.stage.bgColor = "#b3eccc";
 		//激活扩展方法
 		loadExpands();
+		Laya.stage.bgColor = null;
 
 		Laya.stage.scaleMode = Laya.Stage.SCALE_FIXED_WIDTH;
 		Laya.stage.screenMode = Laya.Stage.SCREEN_VERTICAL;
 		Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
 		Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
-
+		Laya.stage.frameRate = Laya.Stage.FRAME_FAST;
 		//兼容微信不支持加载scene后缀场景
 		Laya.URL.exportSceneToJson = GameConfig.exportSceneToJson;
 

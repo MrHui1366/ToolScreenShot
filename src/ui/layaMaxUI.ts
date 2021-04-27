@@ -4,25 +4,6 @@ import Dialog=Laya.Dialog;
 import Scene=Laya.Scene;
 var REG: Function = Laya.ClassUtils.regClass;
 export module ui.DialogFile {
-    export class AdornBuyUI extends Dialog {
-		public bg:Laya.Image;
-		public box_info:Laya.Box;
-		public img_icon:Laya.Image;
-		public txt_name:Laya.Label;
-		public txt_des:Laya.Label;
-		public html_energyLack:Laya.HTMLDivElement;
-		public html_centerTip:Laya.HTMLDivElement;
-		public box_fashionBuy:Laya.Box;
-		public txt_discountTime:Laya.Label;
-		public btn_left:Laya.Button;
-		public btn_right:Laya.Button;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("DialogFile/AdornBuy");
-        }
-    }
-    REG("ui.DialogFile.AdornBuyUI",AdornBuyUI);
     export class PopUpUI extends Dialog {
 		public txt_popUp:Laya.Label;
 		public txt_html:Laya.HTMLDivElement;
@@ -48,30 +29,11 @@ export module ui.EffectFile {
 }
 export module ui.ViewFile {
     export class FashionShopUI extends View {
-		public img_bg:Laya.Image;
-		public btn_back:Laya.Image;
-		public txt_comfort:Laya.Label;
-		public txt_energy:Laya.Label;
+		public img_bg:Laya.Box;
+		public btn_stop:Laya.Button;
+		public btn_start:Laya.Button;
 		public box_center:Laya.Box;
 		public role_root:Laya.Box;
-		public txt_itemName:Laya.Label;
-		public txt_itemDes:Laya.Label;
-		public txt_comfyValue:Laya.Label;
-		public btn_use:Laya.Button;
-		public btn_save:Laya.Button;
-		public btn_itemBuy:Laya.Button;
-		public btn_All:Laya.Image;
-		public btn_hair:Laya.Image;
-		public btn_clothes:Laya.Image;
-		public btn_shose:Laya.Image;
-		public btn_face:Laya.Image;
-		public list_panel:Laya.List;
-		public img_SettingBg:Laya.Image;
-		public btn_Setting:Laya.Image;
-		public img_cutBg:Laya.Image;
-		public btn_cut:Laya.Image;
-		public txt_cut:Laya.Label;
-		public txt_cutBg:Laya.Label;
         constructor(){ super()}
         createChildren():void {
             super.createChildren();
@@ -79,15 +41,6 @@ export module ui.ViewFile {
         }
     }
     REG("ui.ViewFile.FashionShopUI",FashionShopUI);
-    export class GuideUI extends View {
-		public listPanel:Laya.Panel;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("ViewFile/Guide");
-        }
-    }
-    REG("ui.ViewFile.GuideUI",GuideUI);
     export class LoadingUI extends View {
 		public write:Laya.FrameAnimation;
 		public img_progressMask:Laya.Image;

@@ -6,12 +6,8 @@ import CMsg from './coffee_bean/utils/CMsg';
 import { TableDataManager } from "./Data/TableData/TableDataManager";
 import { E_MsgType, E_ServerType } from './coffee_bean/core/CEnum';
 import CTime from './coffee_bean/utils/CTime';
-import { TimingInterface } from './Interface/TimingInterface';
 import CSceneManager from './Scene/CSceneManager';
 import { E_UI } from './Scene/CSceneUrl';
-import PopUp from './View/dialog/PopUp';
-import { ErrorDataManager } from './Data/TableData/ErrorTableData';
-import { ClientTimingShowMainCmd } from './NetWork/ClientTimingShowMainCmd';
 
 /** vConsole控制台定义 */
 declare class VConsole { }
@@ -21,7 +17,6 @@ export default class Game {
 
     /** 加载起始时间戳 */
     private static loadTimeStamp = 0;
-
 
     /** 开始游戏 */
     public static start(): void {
@@ -58,39 +53,14 @@ export default class Game {
         //缓存第一阶段js表
         TableDataManager.readOneTable();
 
-        // localStorage获取UserId和UserKey
-        this.getUserLocalData();
-
         //本地测试
-        // CSceneManager.open( E_UI.E_LODING, true, null, Laya.Handler.create( this, this.onLoadingSceneComplete ) );
-    }
-
-    /** 从LocalStorage获取UserId、UserKey存入本地PlayerData */
-    private static getUserLocalData() {
-        let UserID = Laya.LocalStorage.getItem( "userID" );
-        let UserKey = Laya.LocalStorage.getItem( "userKey" );
-        console.log( 'location.href:', location.href );
-        if ( UserID != null && UserKey != null ) {
-            PlayerData.userID = Number( UserID );
-            PlayerData.userKey = UserKey;
-            CLOG.I( "平台账号存在，使用平台账号!! UserID:{0} UserKey:{1}", UserID, UserKey );
-            CSceneManager.open( E_UI.E_LODING, true, null, Laya.Handler.create( this, this.onLoadingSceneComplete ) );
-        } else {
-            let ErrorData = ErrorDataManager.getInstance().getDataById( 22 );
-            PopUp.showUI( '登录异常,请重试!', ErrorData.btn1, null, ( isok ) => { TimingInterface.getInstance().backToApp() } )
-        }
+        CSceneManager.open( E_UI.E_LODING, true, null, Laya.Handler.create( this, this.onLoadingSceneComplete ) );
     }
 
     /** 加载Loading场景完成 */
     private static async onLoadingSceneComplete(): Promise<void> {
-        CLOG.I( 'LoadingView.scene complete!' );
-
         //关闭多点触控
         Laya.MouseManager.multiTouchEnabled = false;
-
-        await ClientTimingShowMainCmd.getInstance().sendMsg();
-
-        CLOG.I( 'http response' );
 
         //加载第二阶段合并文件
         CRes.cPreload( [
@@ -127,26 +97,16 @@ export default class Game {
             resAry.push( { url: item + ".png", type: Laya.Loader.IMAGE, cache: true } );
         }
 
-        if ( !PlayerData.userInfo.isGuide ) {
-            //大图
-            resAry.push( { url: "ui_Guide/img_bg.png", type: Laya.Loader.IMAGE, cache: false } );
-            resAry.push( { url: "ui_Guide/img_top1.png", type: Laya.Loader.IMAGE, cache: false } );
-            resAry.push( { url: "ui_Guide/img_top2.png", type: Laya.Loader.IMAGE, cache: false } );
-            resAry.push( { url: "ui_Guide/img_top3.png", type: Laya.Loader.IMAGE, cache: false } );
-        }
-
         /**配置表 */
         resAry.push( { url: "JsonConfig/fashionShopConfig.json", type: Laya.Loader.JSON, cache: true } );
         /** 预制体 */
         resAry.push( { url: "PrefabFile/Role.json", type: Laya.Loader.JSON, cache: true } );
-        resAry.push( { url: "PrefabFile/FontTip.json", type: Laya.Loader.JSON, cache: true } );
         //加载zip
         resAry.push( { url: "SpineRes/Role.zip", type: Laya.Loader.BUFFER } );
         // 普通图集
         resAry.push( { url: "res/atlas/ui_Fashion.atlas", type: Laya.Loader.ATLAS, cache: true } );
         resAry.push( { url: "res/atlas/FashionShop.atlas", type: Laya.Loader.ATLAS, cache: true } );
         // View
-        resAry.push( { url: "DialogFile/AdornBuy.json", type: Laya.Loader.JSON, cache: true } );
         resAry.push( { url: "ViewFile/FashionShop.json", type: Laya.Loader.JSON, cache: true } );
         let completeHandler = Laya.Handler.create( this, this.preloadComplete );
         let progressHandler = Laya.Handler.create( this, this.preloadProgress, null, false );
@@ -166,7 +126,7 @@ export default class Game {
         let loadTime = CTime.getNowTimeStamp( false ) - this.loadTimeStamp;
         clog.e( '加载完毕! 耗时:' + loadTime + '秒' );
         SettingData.isloadingSend = true;
-        Laya.timer.once( 1000, this, () => {
+        Laya.timer.once( 1200, this, () => {
             if ( PlayerData.userInfo.isGuide ) {
                 CSceneManager.openFashionShop();
             } else {
