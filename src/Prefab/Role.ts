@@ -1,6 +1,6 @@
 import { FashionShopDataManager, FashionShopTableData } from "../Data/TableData/FashionShopTableData";
-import { PlayerData } from "src/Data/PlayerData";
 import CLOG from "src/coffee_bean/utils/CLOG";
+import { PlayerData } from "src/Data/PlayerData";
 
 /** 角色动画名枚举 */
 enum E_RoleAniName {
@@ -52,11 +52,14 @@ export default class Role extends Laya.Script {
         this._owner.on( Laya.Event.CLICK, this, this.click_ShopRole );
     }
 
-    /** 创建角色 */
-    public createRoleSpine() {
+    /**
+     * 创建角色
+     * @param gender 性别(1:男 2:女)
+     */
+    public createRoleSpine( gender: number ) {
         this.mF_parts = [];
         this.sk_parts = [];
-        let pathArr = this.getRolePath( PlayerData.userInfo.gender );
+        let pathArr = this.getRolePath( gender );
         for ( let i = 0; i < roleZoderArr.length; i++ ) {
             let mF = new Laya.SpineTemplet();
             mF.on( Laya.Event.COMPLETE, this, this.loadPart, [ i ] );

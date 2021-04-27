@@ -18,16 +18,11 @@ export class E_UI {
         name: 'Loading'
     }
 
-    /** 引导页 */
-    public static E_GUIDE: CSceneUrl = {
-        url: 'ViewFile/Guide.scene',
-        name: 'Guide'
-    }
 
     /** 时装商店 */
-    public static E_FASHION_SHOP: CSceneUrl = {
-        url: 'ViewFile/FashionShop.scene',
-        name: 'FashionShop'
+    public static E_SCREENSHOT: CSceneUrl = {
+        url: 'ViewFile/ScreenShotUI.scene',
+        name: 'ScreenShotUI'
     }
 
 }

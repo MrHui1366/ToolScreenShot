@@ -1,5 +1,4 @@
 import { SettingData } from './Data/SettingData';
-import { PlayerData } from "./Data/PlayerData";
 import CLOG, { clog } from "./coffee_bean/utils/CLOG";
 import { CRes, ResInfo } from './coffee_bean/utils/CRes';
 import CMsg from './coffee_bean/utils/CMsg';
@@ -125,14 +124,7 @@ export default class Game {
         TableDataManager.readTwoTable();
         let loadTime = CTime.getNowTimeStamp( false ) - this.loadTimeStamp;
         clog.e( '加载完毕! 耗时:' + loadTime + '秒' );
-        SettingData.isloadingSend = true;
-        Laya.timer.once( 1200, this, () => {
-            if ( PlayerData.userInfo.isGuide ) {
-                CSceneManager.openFashionShop();
-            } else {
-                CSceneManager.openGuide();
-            }
-        } )
+        Laya.timer.once( 1200, this, () => { CSceneManager.openScreenShot(); } )
     }
 
     /** 解压zip角色资源 */

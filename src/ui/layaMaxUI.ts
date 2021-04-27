@@ -28,19 +28,6 @@ export module ui.EffectFile {
     REG("ui.EffectFile.loading_PenUI",loading_PenUI);
 }
 export module ui.ViewFile {
-    export class FashionShopUI extends View {
-		public img_bg:Laya.Box;
-		public btn_stop:Laya.Button;
-		public btn_start:Laya.Button;
-		public box_center:Laya.Box;
-		public role_root:Laya.Box;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("ViewFile/FashionShop");
-        }
-    }
-    REG("ui.ViewFile.FashionShopUI",FashionShopUI);
     export class LoadingUI extends View {
 		public write:Laya.FrameAnimation;
 		public img_progressMask:Laya.Image;
@@ -53,4 +40,21 @@ export module ui.ViewFile {
         }
     }
     REG("ui.ViewFile.LoadingUI",LoadingUI);
+    export class ScreenShotUIUI extends View {
+		public img_bg:Laya.Box;
+		public btn_stop:Laya.Button;
+		public btn_start:Laya.Button;
+		public box_center:Laya.Box;
+		public role_root:Laya.Box;
+		public img_hair:Laya.Image;
+		public img_clothes:Laya.Image;
+		public img_shoes:Laya.Image;
+		public img_face:Laya.Image;
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.loadScene("ViewFile/ScreenShotUI");
+        }
+    }
+    REG("ui.ViewFile.ScreenShotUIUI",ScreenShotUIUI);
 }

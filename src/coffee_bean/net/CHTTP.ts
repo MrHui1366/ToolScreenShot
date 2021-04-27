@@ -89,10 +89,6 @@ export class CHTTP {
                     this.hasRun = false
                     let ErrorData = ErrorDataManager.getInstance().getDataById( 15 );
                     PopUp.showUI( ErrorData.text, ErrorData.btn1, null, ( isOK ) => {
-                        if ( SettingData.isloadingSend ) {
-                            //连接超时，退出游戏
-                            TimingInterface.getInstance().backToApp();
-                        }
                         resolve( [ false, "" ] );
                     } )
                 };
@@ -110,10 +106,6 @@ export class CHTTP {
                             this.hasRun = false
                             let ErrorData = ErrorDataManager.getInstance().getDataById( 8 );
                             PopUp.showUI( ErrorData.text, ErrorData.btn1, null, ( isOK ) => {
-                                if ( SettingData.isloadingSend ) {
-                                    //连接异常，退出游戏重进
-                                    TimingInterface.getInstance().backToApp();
-                                }
                                 resolve( [ false, "" ] );
                             } );
                         }

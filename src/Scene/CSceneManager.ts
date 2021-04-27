@@ -1,5 +1,3 @@
-import { SettingData } from "src/Data/SettingData";
-import { ClientTimingShowMainCmd } from "src/NetWork/ClientTimingShowMainCmd";
 import { CSceneUrl, E_DIALOG, E_UI } from "./CSceneUrl";
 
 /**
@@ -58,14 +56,9 @@ export default class CSceneManager {
         return null;
     }
 
-    /** 打开时装商店 */
-    public static openFashionShop() {
-        this.open( E_UI.E_FASHION_SHOP, true );
-    }
-
-    /** 打开引导页 */
-    public static openGuide() {
-        this.open( E_UI.E_GUIDE, false );
+    /** 打开截图 */
+    public static openScreenShot() {
+        this.open( E_UI.E_SCREENSHOT );
     }
 
     /** 

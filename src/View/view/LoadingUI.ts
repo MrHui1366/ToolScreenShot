@@ -12,27 +12,11 @@ export default class LoadingUI extends ui.ViewFile.LoadingUI {
     }
 
     onEnable() {
-        this.showVersion();
         CMsg.eventOn( E_MsgType.E_Loading, this, this.loadProgress )
     }
 
     onOpened( param ) {
         this.loadingAni();
-    }
-
-    /** 显示版本号 */
-    private showVersion() {
-        let txt = new Laya.Label();
-        txt.name = 'VersionText';
-        txt.italic = true;
-        txt.font = 'Arial';
-        txt.fontSize = 25;
-        txt.color = '#000000';
-        txt.left = 20;
-        txt.bottom = 10;
-        txt.changeText( SettingData.versionsID );
-        Laya.stage.addChild( txt );
-        txt.zOrder = 10001;
     }
 
     /**Loading动画 */
