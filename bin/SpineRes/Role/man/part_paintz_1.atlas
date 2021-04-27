@@ -1,0 +1,97 @@
+
+part_paintz_1.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dj/youdatui
+  rotate: false
+  xy: 2, 130
+  size: 42, 57
+  orig: 42, 57
+  offset: 0, 0
+  index: -1
+dj/zuoxiaotio
+  rotate: false
+  xy: 46, 123
+  size: 35, 26
+  orig: 35, 27
+  offset: 0, 1
+  index: -1
+legR1_normal
+  rotate: false
+  xy: 2, 189
+  size: 41, 61
+  orig: 42, 70
+  offset: 0, 1
+  index: -1
+legR2_normal
+  rotate: false
+  xy: 44, 85
+  size: 32, 36
+  orig: 33, 38
+  offset: 0, 2
+  index: -1
+qiaoyi/youdatui
+  rotate: false
+  xy: 140, 196
+  size: 46, 54
+  orig: 46, 54
+  offset: 0, 0
+  index: -1
+qiaoyi/youxiaotui
+  rotate: false
+  xy: 2, 34
+  size: 38, 37
+  orig: 38, 37
+  offset: 0, 0
+  index: -1
+shendan/zuodatui
+  rotate: false
+  xy: 89, 198
+  size: 49, 52
+  orig: 49, 52
+  offset: 0, 0
+  index: -1
+tuomasi/youdatui
+  rotate: false
+  xy: 45, 190
+  size: 42, 60
+  orig: 42, 69
+  offset: 0, 0
+  index: -1
+tuomasi/youxiaotui
+  rotate: false
+  xy: 46, 151
+  size: 36, 37
+  orig: 36, 37
+  offset: 0, 0
+  index: -1
+yinlun/youdatui
+  rotate: false
+  xy: 2, 73
+  size: 40, 55
+  orig: 40, 56
+  offset: 0, 1
+  index: -1
+yinlun/youtui2
+  rotate: false
+  xy: 44, 55
+  size: 34, 28
+  orig: 38, 30
+  offset: 4, 2
+  index: -1
+yundong/youdatui
+  rotate: false
+  xy: 188, 201
+  size: 35, 49
+  orig: 36, 50
+  offset: 0, 1
+  index: -1
+yundong/youxiaotui
+  rotate: false
+  xy: 2, 2
+  size: 36, 30
+  orig: 36, 31
+  offset: 0, 1
+  index: -1

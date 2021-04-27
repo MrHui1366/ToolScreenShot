@@ -1,0 +1,83 @@
+
+part_braid_1.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+backhair1_skin1
+  rotate: false
+  xy: 2, 2
+  size: 31, 140
+  orig: 31, 140
+  offset: 0, 0
+  index: -1
+backhair2_skin1
+  rotate: false
+  xy: 2, 248
+  size: 86, 142
+  orig: 86, 142
+  offset: 0, 0
+  index: -1
+hair1_skin1
+  rotate: false
+  xy: 339, 402
+  size: 39, 46
+  orig: 40, 47
+  offset: 0, 1
+  index: -1
+hair2_skin1
+  rotate: false
+  xy: 35, 29
+  size: 56, 113
+  orig: 56, 113
+  offset: 0, 0
+  index: -1
+hair3_skin1
+  rotate: false
+  xy: 250, 370
+  size: 40, 78
+  orig: 40, 78
+  offset: 0, 0
+  index: -1
+hair4_skin1
+  rotate: false
+  xy: 2, 144
+  size: 103, 102
+  orig: 104, 103
+  offset: 0, 1
+  index: -1
+hair5_skin1
+  rotate: false
+  xy: 2, 392
+  size: 246, 56
+  orig: 253, 57
+  offset: 7, 1
+  index: -1
+shendan/toufahou
+  rotate: false
+  xy: 90, 257
+  size: 52, 25
+  orig: 53, 26
+  offset: 0, 1
+  index: -1
+shendan/zuoerzhao
+  rotate: false
+  xy: 292, 401
+  size: 45, 47
+  orig: 45, 47
+  offset: 0, 0
+  index: -1
+yinlun/toufa1
+  rotate: false
+  xy: 192, 291
+  size: 44, 99
+  orig: 44, 99
+  offset: 0, 0
+  index: -1
+yinlun/toufahou
+  rotate: false
+  xy: 90, 284
+  size: 100, 106
+  orig: 100, 106
+  offset: 0, 0
+  index: -1

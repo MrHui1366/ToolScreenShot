@@ -1,0 +1,62 @@
+
+part_shoez_1.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dj/zuoxiezi
+  rotate: false
+  xy: 78, 86
+  size: 30, 32
+  orig: 30, 32
+  offset: 0, 0
+  index: -1
+footR2_normal
+  rotate: false
+  xy: 39, 85
+  size: 37, 33
+  orig: 37, 34
+  offset: 0, 0
+  index: -1
+footR_skin1
+  rotate: false
+  xy: 64, 53
+  size: 27, 30
+  orig: 28, 31
+  offset: 0, 1
+  index: -1
+qiaoyi/youxiezi
+  rotate: false
+  xy: 2, 9
+  size: 28, 34
+  orig: 28, 34
+  offset: 0, 0
+  index: -1
+shendan/zuoxiezi
+  rotate: false
+  xy: 2, 45
+  size: 31, 35
+  orig: 31, 35
+  offset: 0, 0
+  index: -1
+tuomasi/youjiao
+  rotate: false
+  xy: 93, 55
+  size: 27, 29
+  orig: 27, 29
+  offset: 0, 0
+  index: -1
+yinlun/youjiao
+  rotate: false
+  xy: 2, 82
+  size: 35, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+yundong/youjiao
+  rotate: false
+  xy: 35, 49
+  size: 27, 31
+  orig: 27, 31
+  offset: 0, 0
+  index: -1

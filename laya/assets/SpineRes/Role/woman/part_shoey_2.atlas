@@ -1,0 +1,90 @@
+
+part_shoey_2.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aimili/zuojiao
+  rotate: false
+  xy: 2, 57
+  size: 32, 34
+  orig: 32, 34
+  offset: 0, 0
+  index: -1
+aimili/zuoxiaotui
+  rotate: false
+  xy: 180, 214
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+chuxi/wazizuop
+  rotate: false
+  xy: 134, 209
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+chuxi/xiezizuo
+  rotate: false
+  xy: 216, 213
+  size: 31, 32
+  orig: 31, 32
+  offset: 0, 0
+  index: -1
+dongji/xieziyou
+  rotate: false
+  xy: 2, 141
+  size: 38, 51
+  orig: 38, 52
+  offset: 0, 1
+  index: -1
+footL_normal
+  rotate: false
+  xy: 42, 143
+  size: 27, 26
+  orig: 29, 26
+  offset: 2, 0
+  index: -1
+footL_skin1
+  rotate: false
+  xy: 48, 171
+  size: 30, 28
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+legL2_normal
+  rotate: false
+  xy: 2, 93
+  size: 35, 46
+  orig: 36, 47
+  offset: 0, 1
+  index: -1
+shendan/youdatui
+  rotate: false
+  xy: 2, 194
+  size: 44, 51
+  orig: 47, 73
+  offset: 0, 10
+  index: -1
+shendan/zuoxie
+  rotate: false
+  xy: 89, 207
+  size: 43, 38
+  orig: 44, 38
+  offset: 0, 0
+  index: -1
+yinlun/zuojiao
+  rotate: false
+  xy: 48, 201
+  size: 39, 44
+  orig: 40, 44
+  offset: 0, 0
+  index: -1
+yundong/zuojiao
+  rotate: false
+  xy: 2, 20
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1

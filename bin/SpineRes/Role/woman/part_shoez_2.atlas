@@ -1,0 +1,90 @@
+
+part_shoez_2.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aimili/youjiao
+  rotate: false
+  xy: 97, 66
+  size: 27, 30
+  orig: 27, 30
+  offset: 0, 0
+  index: -1
+aimili/youxiaotui
+  rotate: false
+  xy: 97, 98
+  size: 29, 26
+  orig: 29, 26
+  offset: 0, 0
+  index: -1
+chuxi/waziyou
+  rotate: false
+  xy: 76, 38
+  size: 30, 26
+  orig: 33, 26
+  offset: 3, 0
+  index: -1
+chuxi/xieziyou
+  rotate: false
+  xy: 67, 94
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+dongji/ziezizuo
+  rotate: false
+  xy: 2, 82
+  size: 34, 42
+  orig: 34, 42
+  offset: 0, 0
+  index: -1
+footR_normal
+  rotate: false
+  xy: 70, 12
+  size: 26, 24
+  orig: 30, 25
+  offset: 0, 0
+  index: -1
+footR_skin1
+  rotate: false
+  xy: 98, 14
+  size: 27, 22
+  orig: 27, 23
+  offset: 0, 0
+  index: -1
+legR2_normal
+  rotate: false
+  xy: 38, 8
+  size: 30, 32
+  orig: 32, 35
+  offset: 0, 2
+  index: -1
+shendan/zuoxiaotui
+  rotate: false
+  xy: 2, 42
+  size: 39, 38
+  orig: 86, 50
+  offset: 0, 8
+  index: -1
+shendan/zuoxiezi
+  rotate: false
+  xy: 43, 61
+  size: 31, 30
+  orig: 32, 31
+  offset: 0, 1
+  index: -1
+yinlun/youjiao
+  rotate: false
+  xy: 2, 2
+  size: 34, 38
+  orig: 35, 38
+  offset: 0, 0
+  index: -1
+yundong/yujiao
+  rotate: false
+  xy: 38, 93
+  size: 27, 31
+  orig: 27, 31
+  offset: 0, 0
+  index: -1

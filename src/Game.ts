@@ -1,0 +1,205 @@
+import { SettingData } from './Data/SettingData';
+import { PlayerData } from "./Data/PlayerData";
+import CLOG, { clog } from "./coffee_bean/utils/CLOG";
+import { CRes, ResInfo } from './coffee_bean/utils/CRes';
+import CMsg from './coffee_bean/utils/CMsg';
+import { TableDataManager } from "./Data/TableData/TableDataManager";
+import { E_MsgType, E_ServerType } from './coffee_bean/core/CEnum';
+import CTime from './coffee_bean/utils/CTime';
+import { TimingInterface } from './Interface/TimingInterface';
+import CSceneManager from './Scene/CSceneManager';
+import { E_UI } from './Scene/CSceneUrl';
+import PopUp from './View/dialog/PopUp';
+import { ErrorDataManager } from './Data/TableData/ErrorTableData';
+import { ClientTimingShowMainCmd } from './NetWork/ClientTimingShowMainCmd';
+
+/** vConsole控制台定义 */
+declare class VConsole { }
+
+/** 游戏控制类*/
+export default class Game {
+
+    /** 加载起始时间戳 */
+    private static loadTimeStamp = 0;
+
+
+    /** 开始游戏 */
+    public static start(): void {
+
+        if ( SettingData.serverType == E_ServerType.E_TEST ) {
+            CLOG.enable();
+            var vConsole = new VConsole();
+            this.loadTimeStamp = CTime.getNowTimeStamp( false );
+            clog.e( '开始加载!' );
+        }
+
+        //加载第一阶段合并文件
+        CRes.cPreload( [
+            { url: "preLoad/pre_loading.json", type: "plf", cache: true }
+        ], Laya.Handler.create( this, this.preloadResOne ), null );
+    }
+
+    /**第一阶段加载资源 */
+    private static preloadResOne(): void {
+        //预先加载loading界面资源, 通讯配置表 / 常量表 / 报错表
+        let resAry = new Array<ResInfo>();
+        resAry.push( { url: "JsonConfig/constantConfig.json", type: Laya.Loader.JSON, cache: true } );
+        resAry.push( { url: "JsonConfig/errorConfig.json", type: Laya.Loader.JSON, cache: true } );
+        resAry.push( { url: "DialogFile/PopUp.json", type: Laya.Loader.JSON, cache: true } );
+        resAry.push( { url: "res/atlas/ui_loading.atlas", type: Laya.Loader.ATLAS, cache: false } );
+        resAry.push( { url: "ViewFile/Loading.json", type: Laya.Loader.JSON, cache: false } );
+        let completeHandler = Laya.Handler.create( this, this.loadingStart );
+        CRes.cPreload( resAry, completeHandler, null );
+    }
+
+    /**进入loading界面 */
+    private static loadingStart(): void {
+
+        //缓存第一阶段js表
+        TableDataManager.readOneTable();
+
+        // localStorage获取UserId和UserKey
+        this.getUserLocalData();
+
+        //本地测试
+        // CSceneManager.open( E_UI.E_LODING, true, null, Laya.Handler.create( this, this.onLoadingSceneComplete ) );
+    }
+
+    /** 从LocalStorage获取UserId、UserKey存入本地PlayerData */
+    private static getUserLocalData() {
+        let UserID = Laya.LocalStorage.getItem( "userID" );
+        let UserKey = Laya.LocalStorage.getItem( "userKey" );
+        console.log( 'location.href:', location.href );
+        if ( UserID != null && UserKey != null ) {
+            PlayerData.userID = Number( UserID );
+            PlayerData.userKey = UserKey;
+            CLOG.I( "平台账号存在，使用平台账号!! UserID:{0} UserKey:{1}", UserID, UserKey );
+            CSceneManager.open( E_UI.E_LODING, true, null, Laya.Handler.create( this, this.onLoadingSceneComplete ) );
+        } else {
+            let ErrorData = ErrorDataManager.getInstance().getDataById( 22 );
+            PopUp.showUI( '登录异常,请重试!', ErrorData.btn1, null, ( isok ) => { TimingInterface.getInstance().backToApp() } )
+        }
+    }
+
+    /** 加载Loading场景完成 */
+    private static async onLoadingSceneComplete(): Promise<void> {
+        CLOG.I( 'LoadingView.scene complete!' );
+
+        //关闭多点触控
+        Laya.MouseManager.multiTouchEnabled = false;
+
+        await ClientTimingShowMainCmd.getInstance().sendMsg();
+
+        CLOG.I( 'http response' );
+
+        //加载第二阶段合并文件
+        CRes.cPreload( [
+            { url: "preLoad/pre_AllRes.json", type: "plf", cache: true }
+        ], Laya.Handler.create( this, this.preloadResTwo ), null );
+    }
+
+    /** 第二段预加载游戏资源*/
+    private static preloadResTwo(): void {
+        let resAry = new Array<ResInfo>();
+        let spineArr: Array<string> = [
+            "SpineRes/Role/man/part_braid_1",
+            "SpineRes/Role/man/part_hair_1",
+            "SpineRes/Role/man/part_face_1",
+            "SpineRes/Role/man/part_clothes_1",
+            "SpineRes/Role/man/part_paintz_1",
+            "SpineRes/Role/man/part_painty_1",
+            "SpineRes/Role/man/part_shoez_1",
+            "SpineRes/Role/man/part_shoey_1",
+            "SpineRes/Role/man/part_tuiz_1",
+            "SpineRes/Role/man/part_tuiy_1",
+            "SpineRes/Role/woman/part_braid_2",
+            "SpineRes/Role/woman/part_hair_2",
+            "SpineRes/Role/woman/part_face_2",
+            "SpineRes/Role/woman/part_clothes_2",
+            "SpineRes/Role/woman/part_paintz_2",
+            "SpineRes/Role/woman/part_painty_2",
+            "SpineRes/Role/woman/part_shoez_2",
+            "SpineRes/Role/woman/part_shoey_2",
+            "SpineRes/Role/woman/part_tuiz_2",
+            "SpineRes/Role/woman/part_tuiy_2"
+        ];
+        for ( let item of spineArr ) {
+            resAry.push( { url: item + ".png", type: Laya.Loader.IMAGE, cache: true } );
+        }
+
+        if ( !PlayerData.userInfo.isGuide ) {
+            //大图
+            resAry.push( { url: "ui_Guide/img_bg.png", type: Laya.Loader.IMAGE, cache: false } );
+            resAry.push( { url: "ui_Guide/img_top1.png", type: Laya.Loader.IMAGE, cache: false } );
+            resAry.push( { url: "ui_Guide/img_top2.png", type: Laya.Loader.IMAGE, cache: false } );
+            resAry.push( { url: "ui_Guide/img_top3.png", type: Laya.Loader.IMAGE, cache: false } );
+        }
+
+        /**配置表 */
+        resAry.push( { url: "JsonConfig/fashionShopConfig.json", type: Laya.Loader.JSON, cache: true } );
+        /** 预制体 */
+        resAry.push( { url: "PrefabFile/Role.json", type: Laya.Loader.JSON, cache: true } );
+        resAry.push( { url: "PrefabFile/FontTip.json", type: Laya.Loader.JSON, cache: true } );
+        //加载zip
+        resAry.push( { url: "SpineRes/Role.zip", type: Laya.Loader.BUFFER } );
+        // 普通图集
+        resAry.push( { url: "res/atlas/ui_Fashion.atlas", type: Laya.Loader.ATLAS, cache: true } );
+        resAry.push( { url: "res/atlas/FashionShop.atlas", type: Laya.Loader.ATLAS, cache: true } );
+        // View
+        resAry.push( { url: "DialogFile/AdornBuy.json", type: Laya.Loader.JSON, cache: true } );
+        resAry.push( { url: "ViewFile/FashionShop.json", type: Laya.Loader.JSON, cache: true } );
+        let completeHandler = Laya.Handler.create( this, this.preloadComplete );
+        let progressHandler = Laya.Handler.create( this, this.preloadProgress, null, false );
+        CRes.cPreload( resAry, completeHandler, progressHandler );
+    }
+
+    /** 预加载进度 */
+    private static preloadProgress( progress: number ): void {
+        CMsg.eventEmit( E_MsgType.E_Loading, progress );
+    }
+
+    /** 预加载完成 */
+    private static async preloadComplete() {
+        await this.unZipRoleRes();
+        //缓存第二阶段js表
+        TableDataManager.readTwoTable();
+        let loadTime = CTime.getNowTimeStamp( false ) - this.loadTimeStamp;
+        clog.e( '加载完毕! 耗时:' + loadTime + '秒' );
+        SettingData.isloadingSend = true;
+        Laya.timer.once( 1000, this, () => {
+            if ( PlayerData.userInfo.isGuide ) {
+                CSceneManager.openFashionShop();
+            } else {
+                CSceneManager.openGuide();
+            }
+        } )
+    }
+
+    /** 解压zip角色资源 */
+    private static async unZipRoleRes(): Promise<void> {
+        return new Promise<void>( ( resolve, reject ) => {
+            const cZip = new JSZip();
+            let zipRes = Laya.loader.getRes( 'SpineRes/Role.zip' );
+            let completeNum = 0;
+            cZip.loadAsync( zipRes ).then( ( data: any ) => {
+                let resObj = data.files as Object;
+                for ( let file in resObj ) {
+                    if ( file == 'Role/' || file == 'Role/man/' || file == 'Role/woman/' ) {
+                        console.log( '排除!!!' );
+                    } else {
+                        let exclude = file.split( "," )[ 1 ];
+                        if ( exclude != 'atlas' ) {
+                            data.file( file ).async( 'text' ).then( ( content: string ) => {
+                                let saveUrl = 'SpineRes/' + file;
+                                completeNum++;
+                                Laya.loader.cacheRes( saveUrl, content );
+                                if ( completeNum >= 32 ) resolve();
+                            } );
+                        }
+                    }
+                }
+            } )
+        } );
+    }
+
+}

@@ -1,0 +1,27 @@
+
+part_tuiy_1.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+b_footL
+  rotate: false
+  xy: 52, 85
+  size: 24, 21
+  orig: 25, 22
+  offset: 0, 1
+  index: -1
+b_legL1
+  rotate: false
+  xy: 2, 40
+  size: 48, 66
+  orig: 54, 66
+  offset: 4, 0
+  index: -1
+b_legL2
+  rotate: false
+  xy: 2, 2
+  size: 34, 36
+  orig: 41, 48
+  offset: 7, 12
+  index: -1

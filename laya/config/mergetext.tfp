@@ -1,0 +1,68 @@
+{
+    "path": "F:\\TimingGame\\TimingShowSetting\\0.TimingChangeFashion\\bin",
+    "outPath": "bin\\preLoad",
+    "jsonSuffixList": [
+        "json",
+        "atlas"
+    ],
+    "package": {
+        "pre_loading.plf": {
+            "DialogFile/PopUp.json": {
+                "type": "json"
+            },
+            "JsonConfig/constantConfig.json": {
+                "type": "json"
+            },
+            "JsonConfig/errorConfig.json": {
+                "type": "json"
+            },
+            "res/atlas/ui_loading.atlas": {
+                "type": "json"
+            },
+            "ViewFile/Loading.json": {
+                "type": "json"
+            }
+        },
+        "pre_AllRes.plf": {
+            "DialogFile/AdornBuy.json": {
+                "type": "json"
+            },
+            "JsonConfig/fashionShopConfig.json": {
+                "type": "json"
+            },
+            "PrefabFile/FontTip.json": {
+                "type": "json"
+            },
+            "PrefabFile/Role.json": {
+                "type": "json"
+            },
+            "res/atlas/FashionShop.atlas": {
+                "type": "json"
+            },
+            "res/atlas/ui_Fashion.atlas": {
+                "type": "json"
+            },
+            "ViewFile/FashionShop.json": {
+                "type": "json"
+            }
+        }
+    },
+    "fileMerge": {
+        "pre_loading.plf": [
+            "DialogFile/PopUp.json",
+            "JsonConfig/constantConfig.json",
+            "JsonConfig/errorConfig.json",
+            "res/atlas/ui_loading.atlas",
+            "ViewFile/Loading.json"
+        ],
+        "pre_AllRes.plf": [
+            "DialogFile/AdornBuy.json",
+            "JsonConfig/fashionShopConfig.json",
+            "PrefabFile/FontTip.json",
+            "PrefabFile/Role.json",
+            "res/atlas/FashionShop.atlas",
+            "res/atlas/ui_Fashion.atlas",
+            "ViewFile/FashionShop.json"
+        ]
+    }
+}

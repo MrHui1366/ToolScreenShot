@@ -1,0 +1,62 @@
+
+part_shoey_1.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dj/youxiezi
+  rotate: false
+  xy: 83, 79
+  size: 34, 40
+  orig: 34, 40
+  offset: 0, 0
+  index: -1
+footL_normal
+  rotate: false
+  xy: 47, 39
+  size: 31, 35
+  orig: 34, 36
+  offset: 2, 0
+  index: -1
+footL_skin1
+  rotate: false
+  xy: 47, 76
+  size: 34, 43
+  orig: 34, 44
+  offset: 0, 1
+  index: -1
+qiaoyi/zuoxiezi
+  rotate: false
+  xy: 80, 39
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+shendan/youxiezi
+  rotate: false
+  xy: 2, 69
+  size: 43, 50
+  orig: 43, 50
+  offset: 0, 0
+  index: -1
+tuomasi/zuojiao
+  rotate: false
+  xy: 46, 2
+  size: 31, 35
+  orig: 31, 35
+  offset: 0, 0
+  index: -1
+yinlun/zuojiao
+  rotate: false
+  xy: 2, 23
+  size: 42, 44
+  orig: 43, 44
+  offset: 0, 0
+  index: -1
+yundong/zuojiao
+  rotate: false
+  xy: 79, 2
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1

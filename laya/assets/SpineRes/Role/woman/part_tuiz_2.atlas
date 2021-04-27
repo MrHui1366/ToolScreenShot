@@ -1,0 +1,27 @@
+
+part_tuiz_2.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+b_footR
+  rotate: false
+  xy: 43, 60
+  size: 24, 22
+  orig: 25, 25
+  offset: 0, 3
+  index: -1
+b_legR1
+  rotate: false
+  xy: 2, 32
+  size: 39, 50
+  orig: 40, 50
+  offset: 0, 0
+  index: -1
+b_legR2
+  rotate: false
+  xy: 2, 2
+  size: 29, 28
+  orig: 31, 29
+  offset: 0, 1
+  index: -1
