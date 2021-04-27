@@ -42,9 +42,8 @@ export module ui.ViewFile {
     REG("ui.ViewFile.LoadingUI",LoadingUI);
     export class ScreenShotUIUI extends View {
 		public img_bg:Laya.Box;
-		public btn_stop:Laya.Button;
 		public btn_start:Laya.Button;
-		public box_center:Laya.Box;
+		public btn_stop:Laya.Button;
 		public role_root:Laya.Box;
 		public img_hair:Laya.Image;
 		public img_clothes:Laya.Image;

@@ -66,29 +66,34 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     /** 开始 */
     private startBtn() {
+        console.log( '点击了开始!!!' );
         this.screenShot();
 
     }
 
     /** 停止 */
     private stopBtn() {
-
+        console.log( '点击了停止!!!' );
 
     }
 
     /** 截图 */
     private screenShot() {
-        let pictrue = Laya.stage.drawToCanvas( this.role_root.width, this.role_root.height, 0, 0 );
+        let pictrue = this.role_root.drawToCanvas( this.role_root.width, this.role_root.height, 0, 0 );
         let dataUrl = pictrue.toBase64( "image/png", 0.9 );
-        var href = dataUrl.replace( /^data:image[^;]*/, "data:image/octet-stream" );
-        document.location.href = href;
-        var a = document.createElement( 'a' ); // 创建一个a节点插入的document
-        a.href = dataUrl;
-        a.download = 'asd.png';
+        let img = document.createElement( 'img' );
+        img.src = dataUrl;
+        let href = dataUrl.replace( /^data:image[^;]*/, "data:image/octet-stream" );
+        let a = document.createElement( 'a' );
+        a.href = href;
+        a.download =
+            'img' +
+            PlayerData.clothing[ 0 ] + '_' +
+            PlayerData.clothing[ 1 ] + '_' +
+            PlayerData.clothing[ 2 ] + '_' +
+            PlayerData.clothing[ 3 ] + '.png'
         a.click();
         a.remove();
-
-
     }
 
 

@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":130,
-    "selecteID":67,
+    "selectedBox":2,
+    "selecteID":196,
     "searchKey":"View,ScreenShotUI",
     "props":{"width":750,"top":0,"sceneColor":null,"runtime":"View/view/ScreenShotUI.ts","right":0,"name":"ScreenShotUI","left":0,"height":1334,"bottom":0},
     "nodeParent":-1,
@@ -34,10 +34,10 @@
         {
             "x":15,
             "type":"Button",
-            "searchKey":"Button,btn_stop",
-            "props":{"var":"btn_stop","top":1000,"stateNum":"1","skin":"ui_Fashion/img_btnBuy.png","left":80,"labelSize":36,"labelFont":"SimHei","labelColors":"#000000,#000000,#000000","labelBold":true,"label":"开始","anchorY":0.5,"anchorX":0.5},
+            "searchKey":"Button,btn_start",
+            "props":{"var":"btn_start","top":1000,"stateNum":"1","skin":"ui_Fashion/img_btnBuy.png","left":80,"labelSize":36,"labelFont":"SimHei","labelColors":"#000000,#000000,#000000","labelBold":true,"label":"开始","anchorY":0.5,"anchorX":0.5},
             "nodeParent":2,
-            "label":"btn_stop",
+            "label":"btn_start",
             "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
@@ -67,10 +67,10 @@
         {
             "x":15,
             "type":"Button",
-            "searchKey":"Button,btn_start",
-            "props":{"var":"btn_start","top":1000,"stateNum":"1","skin":"ui_Fashion/img_btnSave.png","right":80,"labelSize":36,"labelFont":"SimHei","labelColors":"#000000,#000000,#000000","labelBold":true,"label":"停止","anchorY":0.5,"anchorX":0.5},
+            "searchKey":"Button,btn_stop",
+            "props":{"var":"btn_stop","top":1000,"stateNum":"1","skin":"ui_Fashion/img_btnSave.png","right":80,"labelSize":36,"labelFont":"SimHei","labelColors":"#000000,#000000,#000000","labelBold":true,"label":"停止","anchorY":0.5,"anchorX":0.5},
             "nodeParent":2,
-            "label":"btn_start",
+            "label":"btn_stop",
             "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
@@ -101,17 +101,16 @@
             "x":15,
             "type":"Box",
             "searchKey":"Box,box_center",
-            "props":{"y":200,"x":0,"width":750,"var":"box_center","height":500},
+            "props":{"y":200,"x":0,"width":750,"name":"box_center","height":500},
             "nodeParent":2,
             "label":"box_center",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":130,
             "child":[
                 {
-                    "x":30,
                     "type":"Box",
                     "searchKey":"Box,role_root,role_root",
                     "props":{"width":270,"var":"role_root","name":"role_root","height":434,"centerY":0,"centerX":0},
@@ -128,7 +127,6 @@
                     "$HIDDEN":false
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,up",
                     "props":{"y":32,"x":240,"name":"up"},
@@ -157,7 +155,6 @@
                     "$LOCKED":true
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,down",
                     "props":{"y":468,"x":240,"name":"down"},
@@ -186,7 +183,6 @@
                     "$LOCKED":true
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,left",
                     "props":{"y":32,"x":239,"name":"left"},
@@ -214,7 +210,6 @@
                     "$LOCKED":true
                 },
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,right",
                     "props":{"y":32,"x":511,"name":"right"},
