@@ -103,6 +103,7 @@ export default class Game {
         //加载zip
         resAry.push( { url: "SpineRes/Role.zip", type: Laya.Loader.BUFFER } );
         // 普通图集
+        resAry.push( { url: "res/atlas/Bg.atlas", type: Laya.Loader.ATLAS, cache: true } );
         resAry.push( { url: "res/atlas/ui_Fashion.atlas", type: Laya.Loader.ATLAS, cache: true } );
         resAry.push( { url: "res/atlas/FashionShop.atlas", type: Laya.Loader.ATLAS, cache: true } );
         // View

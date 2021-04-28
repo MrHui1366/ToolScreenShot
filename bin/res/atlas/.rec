@@ -1,4 +1,15 @@
 D .
+D Bg
+P 33D1371C img_1.jpg
+P F5082EAD img_10.jpg
+P 72CBC984 img_2.jpg
+P F9525A5B img_3.jpg
+P AB92E780 img_4.jpg
+P F3880CEB img_5.jpg
+P 0BC7B159 img_6.jpg
+P F8FA21B9 img_7.jpg
+P B814A9B3 img_8.jpg
+P 75C77B3F img_9.jpg
 D FashionShop
 P D27A81BE img_clothes_M0.png
 P 146A5424 img_clothes_M1.png
@@ -69,21 +80,13 @@ D SpineRes
 D ui_Fashion
 P B70E82F1 img_btnBuy.png
 P 2B202DFC img_btnSave.png
-P 8F17BD67 img_cutBg.png
-P D0A5C97A img_InUse.png
 P 233F6133 img_itemBg.png
 P A060A9DD img_itemPitch.png
 P 996DC202 img_mask.png
-P 44131AC9 img_pageBtn0.png
-P 6D535188 img_pageBtn1.png
-P 3D9AA8B8 img_pageBtn2.png
-P D7D0703C img_pageBtn3.png
-P 7640F0BC img_pageBtn4.png
 P 2033BADF img_pageBtnP1.png
 P 9960823C img_pageBtnP2.png
 P 9025A3DB img_pageBtnP3.png
 P C16AD981 img_pageBtnP4.png
-P 01596670 img_rightBg.png
 D ui_Guide
 D ui_loading
 P C1C809D2 img_btnBrown.png
