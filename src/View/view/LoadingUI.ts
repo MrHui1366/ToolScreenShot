@@ -1,8 +1,6 @@
 import { ui } from '../../ui/layaMaxUI';
 import { E_MsgType } from './../../coffee_bean/core/CEnum';
 import CMsg from "../../coffee_bean/utils/CMsg";
-import { SettingData } from '../../Data/SettingData';
-
 
 /** 加载界面*/
 export default class LoadingUI extends ui.ViewFile.LoadingUI {

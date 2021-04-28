@@ -3,22 +3,6 @@ import View=Laya.View;
 import Dialog=Laya.Dialog;
 import Scene=Laya.Scene;
 var REG: Function = Laya.ClassUtils.regClass;
-export module ui.DialogFile {
-    export class PopUpUI extends Dialog {
-		public txt_popUp:Laya.Label;
-		public txt_html:Laya.HTMLDivElement;
-		public close_btn:Laya.Image;
-		public close_txt:Laya.Label;
-		public ensure_btn:Laya.Image;
-		public ensure_txt:Laya.Label;
-        constructor(){ super()}
-        createChildren():void {
-            super.createChildren();
-            this.loadScene("DialogFile/PopUp");
-        }
-    }
-    REG("ui.DialogFile.PopUpUI",PopUpUI);
-}
 export module ui.EffectFile {
     export class loading_PenUI extends Laya.EffectAnimation {
 		public ani1:Laya.FrameAnimation;

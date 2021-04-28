@@ -1,4 +1,3 @@
-import { SettingData } from './Data/SettingData';
 import CLOG, { clog } from "./coffee_bean/utils/CLOG";
 import { CRes, ResInfo } from './coffee_bean/utils/CRes';
 import CMsg from './coffee_bean/utils/CMsg';
@@ -20,12 +19,10 @@ export default class Game {
     /** 开始游戏 */
     public static start(): void {
 
-        if ( SettingData.serverType == E_ServerType.E_TEST ) {
-            CLOG.enable();
-            var vConsole = new VConsole();
-            this.loadTimeStamp = CTime.getNowTimeStamp( false );
-            clog.e( '开始加载!' );
-        }
+        CLOG.enable();
+        var vConsole = new VConsole();
+        this.loadTimeStamp = CTime.getNowTimeStamp( false );
+        clog.e( '开始加载!' );
 
         //加载第一阶段合并文件
         CRes.cPreload( [
@@ -37,9 +34,6 @@ export default class Game {
     private static preloadResOne(): void {
         //预先加载loading界面资源, 通讯配置表 / 常量表 / 报错表
         let resAry = new Array<ResInfo>();
-        resAry.push( { url: "JsonConfig/constantConfig.json", type: Laya.Loader.JSON, cache: true } );
-        resAry.push( { url: "JsonConfig/errorConfig.json", type: Laya.Loader.JSON, cache: true } );
-        resAry.push( { url: "DialogFile/PopUp.json", type: Laya.Loader.JSON, cache: true } );
         resAry.push( { url: "res/atlas/ui_loading.atlas", type: Laya.Loader.ATLAS, cache: false } );
         resAry.push( { url: "ViewFile/Loading.json", type: Laya.Loader.JSON, cache: false } );
         let completeHandler = Laya.Handler.create( this, this.loadingStart );
@@ -48,9 +42,6 @@ export default class Game {
 
     /**进入loading界面 */
     private static loadingStart(): void {
-
-        //缓存第一阶段js表
-        TableDataManager.readOneTable();
 
         //本地测试
         CSceneManager.open( E_UI.E_LODING, true, null, Laya.Handler.create( this, this.onLoadingSceneComplete ) );
