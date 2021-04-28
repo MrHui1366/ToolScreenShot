@@ -73,13 +73,11 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
     private startBtn() {
         console.log( '点击了开始!!!' );
         this.screenShot();
-
     }
 
     /** 停止 */
     private stopBtn() {
         console.log( '点击了停止!!!' );
-
     }
 
     /** 截图 */
