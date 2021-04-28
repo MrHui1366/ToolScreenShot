@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":2,
-    "selecteID":211,
+    "selecteID":130,
     "searchKey":"View,ScreenShotUI",
     "props":{"width":750,"top":0,"sceneColor":null,"runtime":"View/view/ScreenShotUI.ts","right":0,"name":"ScreenShotUI","left":0,"height":1334,"bottom":0},
     "nodeParent":-1,
@@ -53,7 +53,7 @@
             "props":{"x":0,"width":750,"top":170,"name":"box_center","height":500},
             "nodeParent":2,
             "label":"box_center",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
@@ -134,20 +134,6 @@
                         },
                         {
                             "type":"Image",
-                            "searchKey":"Image,img_hair",
-                            "props":{"var":"img_hair","centerY":0,"centerX":0},
-                            "nodeParent":212,
-                            "label":"img_hair",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":214,
-                            "child":[
-                                ],
-                            "$LOCKED":true
-                        },
-                        {
-                            "type":"Image",
                             "searchKey":"Image",
                             "props":{"x":32,"top":-80,"skin":"ui_Fashion/img_pageBtnP1.png"},
                             "nodeParent":212,
@@ -158,6 +144,20 @@
                             "compId":233,
                             "child":[
                                 ]
+                        },
+                        {
+                            "type":"Image",
+                            "searchKey":"Image,img_hair",
+                            "props":{"width":116,"var":"img_hair","height":116,"centerY":0,"centerX":0},
+                            "nodeParent":212,
+                            "label":"img_hair",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":214,
+                            "child":[
+                                ],
+                            "$LOCKED":true
                         }],
                     "$LOCKED":true,
                     "$HIDDEN":false
@@ -190,20 +190,6 @@
                         },
                         {
                             "type":"Image",
-                            "searchKey":"Image,img_clothes",
-                            "props":{"var":"img_clothes","centerY":0,"centerX":0},
-                            "nodeParent":218,
-                            "label":"img_clothes",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":220,
-                            "child":[
-                                ],
-                            "$LOCKED":true
-                        },
-                        {
-                            "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":-80,"x":30,"top":-80,"skin":"ui_Fashion/img_pageBtnP2.png"},
                             "nodeParent":218,
@@ -214,6 +200,20 @@
                             "compId":234,
                             "child":[
                                 ]
+                        },
+                        {
+                            "type":"Image",
+                            "searchKey":"Image,img_clothes",
+                            "props":{"width":116,"var":"img_clothes","height":116,"centerY":0,"centerX":0},
+                            "nodeParent":218,
+                            "label":"img_clothes",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":220,
+                            "child":[
+                                ],
+                            "$LOCKED":true
                         }],
                     "$LOCKED":true,
                     "$HIDDEN":false
@@ -246,20 +246,6 @@
                         },
                         {
                             "type":"Image",
-                            "searchKey":"Image,img_shoes",
-                            "props":{"var":"img_shoes","centerY":0,"centerX":0},
-                            "nodeParent":221,
-                            "label":"img_shoes",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":223,
-                            "child":[
-                                ],
-                            "$LOCKED":true
-                        },
-                        {
-                            "type":"Image",
                             "searchKey":"Image",
                             "props":{"y":-80,"x":31,"top":-80,"skin":"ui_Fashion/img_pageBtnP3.png"},
                             "nodeParent":221,
@@ -270,6 +256,20 @@
                             "compId":235,
                             "child":[
                                 ]
+                        },
+                        {
+                            "type":"Image",
+                            "searchKey":"Image,img_shoes",
+                            "props":{"width":116,"var":"img_shoes","height":116,"centerY":0,"centerX":0},
+                            "nodeParent":221,
+                            "label":"img_shoes",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":223,
+                            "child":[
+                                ],
+                            "$LOCKED":true
                         }],
                     "$LOCKED":true,
                     "$HIDDEN":false
@@ -302,20 +302,6 @@
                         },
                         {
                             "type":"Image",
-                            "searchKey":"Image,img_face",
-                            "props":{"var":"img_face","centerY":0,"centerX":0},
-                            "nodeParent":215,
-                            "label":"img_face",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":217,
-                            "child":[
-                                ],
-                            "$LOCKED":true
-                        },
-                        {
-                            "type":"Image",
                             "searchKey":"Image",
                             "props":{"x":32,"top":-80,"skin":"ui_Fashion/img_pageBtnP4.png"},
                             "nodeParent":215,
@@ -326,6 +312,20 @@
                             "compId":236,
                             "child":[
                                 ]
+                        },
+                        {
+                            "type":"Image",
+                            "searchKey":"Image,img_face",
+                            "props":{"width":116,"var":"img_face","height":116,"centerY":0,"centerX":0},
+                            "nodeParent":215,
+                            "label":"img_face",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":217,
+                            "child":[
+                                ],
+                            "$LOCKED":true
                         }],
                     "$LOCKED":true,
                     "$HIDDEN":false
