@@ -1,5 +1,6 @@
 D .
 D Bg
+P D49B51AD img0_1_2_3 (4).png
 P 33D1371C img_1.jpg
 P F5082EAD img_10.jpg
 P 72CBC984 img_2.jpg
@@ -87,7 +88,6 @@ P 2033BADF img_pageBtnP1.png
 P 9960823C img_pageBtnP2.png
 P 9025A3DB img_pageBtnP3.png
 P C16AD981 img_pageBtnP4.png
-D ui_Guide
 D ui_loading
 P C1C809D2 img_btnBrown.png
 P C54244A2 img_btnGreen.png

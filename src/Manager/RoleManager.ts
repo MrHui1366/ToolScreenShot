@@ -21,15 +21,13 @@ export default class RoleManager extends CSingleton {
     /** 
      * 创建角色
      * @param root  父节点
-     * @param pos 坐标
      * @param gender 性别 
      * @param clothing 时装数据
      */
-    public createRole( root: Laya.Sprite, pos: CobjPos, gender: number, clothing ): Role {
+    public createRole( root: Laya.Sprite, gender: number, clothing ): Role {
         //添加角色到父节点
         let role: Laya.Sprite = Laya.Pool.getItemByCreateFun( 'Role', this.Role_prefab.create, this.Role_prefab );
         root.addChild( role );
-        role.pos( pos.x, pos.y );
         let role_s = role.getComponent( Role ) as Role;
         role_s.createRoleSpine( gender, clothing );
         return role_s;

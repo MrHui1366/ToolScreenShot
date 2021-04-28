@@ -24,13 +24,7 @@
             }
         },
         "pre_AllRes.plf": {
-            "DialogFile/AdornBuy.json": {
-                "type": "json"
-            },
             "JsonConfig/fashionShopConfig.json": {
-                "type": "json"
-            },
-            "PrefabFile/FontTip.json": {
                 "type": "json"
             },
             "PrefabFile/Role.json": {
@@ -42,7 +36,7 @@
             "res/atlas/ui_Fashion.atlas": {
                 "type": "json"
             },
-            "ViewFile/FashionShop.json": {
+            "ViewFile/ScreenShotUI.json": {
                 "type": "json"
             }
         }
@@ -56,13 +50,11 @@
             "ViewFile/Loading.json"
         ],
         "pre_AllRes.plf": [
-            "DialogFile/AdornBuy.json",
             "JsonConfig/fashionShopConfig.json",
-            "PrefabFile/FontTip.json",
             "PrefabFile/Role.json",
             "res/atlas/FashionShop.atlas",
             "res/atlas/ui_Fashion.atlas",
-            "ViewFile/FashionShop.json"
+            "ViewFile/ScreenShotUI.json"
         ]
     }
 }

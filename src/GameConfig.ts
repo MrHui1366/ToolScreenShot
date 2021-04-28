@@ -3,7 +3,6 @@ import PopUp from "./View/dialog/PopUp"
 import ButtonEff from "./Script/ButtonEff"
 import LoadingUI from "./View/view/LoadingUI"
 import ScreenShotUI from "./View/view/ScreenShotUI"
-import FontTip from "./Prefab/FontTip"
 import Role from "./Prefab/Role"
 /*
 * 游戏初始化配置;
@@ -28,7 +27,6 @@ export default class GameConfig{
         reg("Script/ButtonEff.ts",ButtonEff);
         reg("View/view/LoadingUI.ts",LoadingUI);
         reg("View/view/ScreenShotUI.ts",ScreenShotUI);
-        reg("Prefab/FontTip.ts",FontTip);
         reg("Prefab/Role.ts",Role);
     }
 }

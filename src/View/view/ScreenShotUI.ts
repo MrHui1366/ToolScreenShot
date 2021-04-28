@@ -50,10 +50,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
     /** 初始化 */
     private init() {
         this.clothing = [ 0, 1, 2, 3 ];
-        let pos = { x: this.role_root.width / 2, y: this.role_root.height };
-        RoleManager.getInstance().createRole( this.role_root, pos, this.nowGender, this.clothing );
-
-
+        RoleManager.getInstance().createRole( this.role_root, this.nowGender, this.clothing );
     }
 
     /** 显示当前穿着的衣服 */
@@ -87,7 +84,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     /** 截图 */
     private screenShot() {
-        let pictrue = this.role_root.drawToCanvas( this.role_root.width, this.role_root.height, 235, 10 );
+        let pictrue = this.img_bg.drawToCanvas( this.img_bg.width, this.img_bg.height, 235, 10 );
         let dataUrl = pictrue.toBase64( "image/png", 0.9 );
         let img = document.createElement( 'img' );
         img.src = dataUrl;
