@@ -107,10 +107,10 @@ export default class Role extends Laya.Script {
             let sk_part = this.sk_parts[ i ];
             sk_part.play( aniName, isLoop );
         }
-        for ( let i = 0; i < this.sk_parts.length; i++ ) {
-            let sk_part = this.sk_parts[ i ];
-            sk_part.stop();
-        }
+        // for ( let i = 0; i < this.sk_parts.length; i++ ) {
+        //     let sk_part = this.sk_parts[ i ];
+        //     sk_part.stop();
+        // }
     }
 
     /** 
@@ -191,12 +191,20 @@ export default class Role extends Laya.Script {
         return pathArr;
     }
 
+    /** 换装 */
+    public changeFashion( data: FashionShopTableData[] ) {
+        for ( let i = 0; i < this.clothing.length; i++ ) {
+            if ( this.clothing[ i ] != data[ i ].id ) {
+                this.changePartSkin( data[ i ] );
+            }
+        }
+    }
+
     /** 
      * 替换局部时装
      * @param data 时装属性
      */
-    public changePartSkin( data: FashionShopTableData ) {
-        CLOG.E( '换装----部位：{0},ID：{1},名称：{2},动画名字:{3}', data.type, data.id, data.name, data.skinName );
+    private changePartSkin( data: FashionShopTableData ) {
         switch ( data.type ) {
             case 0://头发
                 this.sk_parts[ 0 ].showSkinByName( data.skinName );
