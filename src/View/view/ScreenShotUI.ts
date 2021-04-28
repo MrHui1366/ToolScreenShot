@@ -132,9 +132,10 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
     private startBtn() {
         Common.btn_Protect( this.btn_start );
         CLOG.E( '开始!!!' );
-        this.startFunc();
-        // Laya.timer.loop( 200, this, this.startFunc )
+        Laya.timer.loop( 1, this, this.startFunc )
     }
+
+    private screeNum = 0;
 
     /** 开始执行 */
     private startFunc() {
@@ -145,7 +146,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
             CLOG.E( '完成----OK' );
             Laya.timer.clear( this, this.startFunc );
         } else {
-            // this.screenShot();
+            this.screenShot();
             if ( this.faceIndex == this.skinNumCount ) {
                 this.faceIndex = 0;
                 if ( this.shoesIndex == this.skinNumCount ) {
@@ -153,7 +154,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
                     if ( this.clothesIndex == this.skinNumCount ) {
                         this.clothesIndex = 0;
                         if ( this.hariIndex == this.skinNumCount ) {
-
+                            Laya.timer.clear( this, this.startFunc );
                         } else {
                             this.hariIndex++;
                         }
@@ -167,6 +168,8 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
                 this.faceIndex++;
             }
             this.upDateRole();
+            this.screeNum++
+            CLOG.E( '截图次数：{0}', this.screeNum );
         }
     }
 
