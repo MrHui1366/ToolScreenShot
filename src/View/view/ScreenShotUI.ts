@@ -1,5 +1,3 @@
-import { CobjPos } from "src/coffee_bean/core/CData";
-import { PlayerData } from "src/Data/PlayerData";
 import { FashionShopDataManager, FashionShopTableData } from "src/Data/TableData/FashionShopTableData";
 import RoleManager from "src/Manager/RoleManager";
 import Role from "src/Prefab/Role";
@@ -19,10 +17,14 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     private womanList: FashionShopTableData[];
 
+    /** 穿戴服装数据 */
+    private clothing: Array<number>;
+
     /** 角色对象 */
     private Role: Role = null;
 
     private nowGender: number = 1;
+    private bgID: number = 1;
 
     constructor () {
         super();
@@ -39,18 +41,24 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
         this.init();
     }
 
+    /** 初始化数据 */
+    private initData() {
+
+
+    }
+
     /** 初始化 */
     private init() {
-        PlayerData.clothing = [ 0, 1, 2, 3 ];
+        this.clothing = [ 0, 1, 2, 3 ];
         let pos = { x: this.role_root.width / 2, y: this.role_root.height };
-        RoleManager.getInstance().createRole( this.role_root, pos, this.nowGender );
+        RoleManager.getInstance().createRole( this.role_root, pos, this.nowGender, this.clothing );
 
 
     }
 
     /** 显示当前穿着的衣服 */
     private showFashion() {
-        let tableData = FashionShopDataManager.getInstance().getDataById( PlayerData.clothing[ 0 ] );
+        let tableData = FashionShopDataManager.getInstance().getDataById( this.clothing[ 0 ] );
         this.img_hair.skin = '';
         this.img_clothes.skin = '';
         this.img_shoes.skin = '';
@@ -79,7 +87,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     /** 截图 */
     private screenShot() {
-        let pictrue = this.role_root.drawToCanvas( this.role_root.width, this.role_root.height, 200, 0 );
+        let pictrue = this.role_root.drawToCanvas( this.role_root.width, this.role_root.height, 235, 10 );
         let dataUrl = pictrue.toBase64( "image/png", 0.9 );
         let img = document.createElement( 'img' );
         img.src = dataUrl;
@@ -88,10 +96,12 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
         a.href = href;
         a.download =
             'img' +
-            PlayerData.clothing[ 0 ] + '_' +
-            PlayerData.clothing[ 1 ] + '_' +
-            PlayerData.clothing[ 2 ] + '_' +
-            PlayerData.clothing[ 3 ] + '.png'
+            this.nowGender + '_' +
+            this.bgID + '_' +
+            this.clothing[ 0 ] + '_' +
+            this.clothing[ 1 ] + '_' +
+            this.clothing[ 2 ] + '_' +
+            this.clothing[ 3 ] + '.png'
         a.click();
         a.remove();
     }

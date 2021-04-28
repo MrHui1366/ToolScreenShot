@@ -67,48 +67,23 @@ P EDB0B7D5 img_shoe_W7.png
 D JsonConfig
 D SpineRes
 D ui_Fashion
-P 6EF336AE hscroll$bar.png
-P 7FF47AC5 hscroll$down.png
-P 3D7B147A hscroll$up.png
-P 750BD445 hscroll.png
-P 011DFF38 img_arrIcon.png
-P FE588BE9 img_bg.png
-P C5DCE30B img_box.png
-P 36EC1988 img_btnBack.png
 P B70E82F1 img_btnBuy.png
-P 5997FFD0 img_btnCut.png
 P 2B202DFC img_btnSave.png
-P 93E3998C img_comfort.png
 P 8F17BD67 img_cutBg.png
-P 17E4703E img_cutCircle.png
-P D3D37FE5 img_cutIcon.png
-P 0ECB9EC5 img_disCount.png
-P 8DDAED27 img_energy.png
-P 8B0D8A47 img_fitmentInuse.png
-P 14226C6F img_Goin.png
-P 57404279 img_has.png
 P D0A5C97A img_InUse.png
 P 233F6133 img_itemBg.png
 P A060A9DD img_itemPitch.png
-P 48B32947 img_leftBg.png
 P 996DC202 img_mask.png
 P 44131AC9 img_pageBtn0.png
 P 6D535188 img_pageBtn1.png
 P 3D9AA8B8 img_pageBtn2.png
 P D7D0703C img_pageBtn3.png
 P 7640F0BC img_pageBtn4.png
-P 0342A35A img_pageBtnP0.png
 P 2033BADF img_pageBtnP1.png
 P 9960823C img_pageBtnP2.png
 P 9025A3DB img_pageBtnP3.png
 P C16AD981 img_pageBtnP4.png
 P 01596670 img_rightBg.png
-P 1A8257C0 img_settingBg0.png
-P 0B2136F0 img_settingBg1.png
-P 2DCE1DF9 vscroll$bar.png
-P 6FE7EA34 vscroll$down.png
-P 0587871F vscroll$up.png
-P 5FD17798 vscroll.png
 D ui_Guide
 D ui_loading
 P C1C809D2 img_btnBrown.png

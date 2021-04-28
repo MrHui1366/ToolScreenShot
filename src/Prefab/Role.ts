@@ -1,6 +1,5 @@
 import { FashionShopDataManager, FashionShopTableData } from "../Data/TableData/FashionShopTableData";
 import CLOG from "src/coffee_bean/utils/CLOG";
-import { PlayerData } from "src/Data/PlayerData";
 
 /** 角色动画名枚举 */
 enum E_RoleAniName {
@@ -43,6 +42,9 @@ export default class Role extends Laya.Script {
     /** 部位加载完成数量 */
     private loadCompleteNum: number = 0;
 
+    /** 时装数据 */
+    private clothing: Array<number>;
+
     constructor () {
         super();
     }
@@ -55,8 +57,10 @@ export default class Role extends Laya.Script {
     /**
      * 创建角色
      * @param gender 性别(1:男 2:女)
+     * @param clothing 时装数据
      */
-    public createRoleSpine( gender: number ) {
+    public createRoleSpine( gender: number, clothing: Array<number> ) {
+        this.clothing = clothing;
         this.mF_parts = [];
         this.sk_parts = [];
         let pathArr = this.getRolePath( gender );
@@ -141,7 +145,7 @@ export default class Role extends Laya.Script {
                 skinIndex = 0;
                 break;
         }
-        let nowUseID = PlayerData.clothing[ skinIndex ];
+        let nowUseID = this.clothing[ skinIndex ];
         let nowTableData = FashionShopDataManager.getInstance().getDataById( nowUseID );
         return nowTableData.skinName;
     }

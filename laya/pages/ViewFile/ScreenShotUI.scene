@@ -2,11 +2,11 @@
     "x":0,
     "type":"View",
     "selectedBox":2,
-    "selecteID":196,
+    "selecteID":195,
     "searchKey":"View,ScreenShotUI",
     "props":{"width":750,"top":0,"sceneColor":null,"runtime":"View/view/ScreenShotUI.ts","right":0,"name":"ScreenShotUI","left":0,"height":1334,"bottom":0},
     "nodeParent":-1,
-    "maxID":233,
+    "maxID":237,
     "label":"ScreenShotUI",
     "isOpen":true,
     "isDirectory":true,
@@ -33,75 +33,24 @@
         },
         {
             "x":15,
-            "type":"Button",
-            "searchKey":"Button,btn_start",
-            "props":{"var":"btn_start","top":1000,"stateNum":"1","skin":"ui_Fashion/img_btnBuy.png","left":80,"labelSize":36,"labelFont":"SimHei","labelColors":"#000000,#000000,#000000","labelBold":true,"label":"开始","anchorY":0.5,"anchorX":0.5},
+            "type":"Label",
+            "searchKey":"Label",
+            "props":{"top":50,"text":"自动截图工具","fontSize":45,"font":"Arial","color":"#000000","centerX":0,"bold":true},
             "nodeParent":2,
-            "label":"btn_start",
-            "isOpen":false,
-            "isDirectory":true,
+            "label":"Label",
+            "isDirectory":false,
             "isAniNode":true,
-            "hasChild":true,
-            "compId":195,
+            "hasChild":false,
+            "compId":210,
             "child":[
-                {
-                    "type":"Script",
-                    "switchAble":true,
-                    "source":"src/Script/ButtonEff.ts",
-                    "searchKey":"Script,ButtonEff",
-                    "removeAble":true,
-                    "props":{},
-                    "nodeParent":195,
-                    "label":"ButtonEff",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":204,
-                    "child":[
-                        ],
-                    "$LOCKED":true
-                }],
-            "$LOCKED":true,
-            "$HIDDEN":false
-        },
-        {
-            "x":15,
-            "type":"Button",
-            "searchKey":"Button,btn_stop",
-            "props":{"var":"btn_stop","top":1000,"stateNum":"1","skin":"ui_Fashion/img_btnSave.png","right":80,"labelSize":36,"labelFont":"SimHei","labelColors":"#000000,#000000,#000000","labelBold":true,"label":"停止","anchorY":0.5,"anchorX":0.5},
-            "nodeParent":2,
-            "label":"btn_stop",
-            "isOpen":false,
-            "isDirectory":true,
-            "isAniNode":true,
-            "hasChild":true,
-            "compId":196,
-            "child":[
-                {
-                    "type":"Script",
-                    "switchAble":true,
-                    "source":"src/Script/ButtonEff.ts",
-                    "searchKey":"Script,ButtonEff",
-                    "removeAble":true,
-                    "props":{},
-                    "nodeParent":196,
-                    "label":"ButtonEff",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":224,
-                    "child":[
-                        ],
-                    "$LOCKED":true
-                }],
-            "$LOCKED":true,
-            "$HIDDEN":false
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
             "type":"Box",
             "searchKey":"Box,box_center",
-            "props":{"y":200,"x":0,"width":750,"name":"box_center","height":500},
+            "props":{"x":0,"width":750,"top":170,"name":"box_center","height":500},
             "nodeParent":2,
             "label":"box_center",
             "isOpen":false,
@@ -243,10 +192,10 @@
         {
             "x":15,
             "type":"Box",
-            "searchKey":"Box",
-            "props":{"width":750,"top":740,"styleSkin":"ui_Fashion/img_box.png","sizeGrid":"83,55,66,55","height":200,"centerX":0,"bgColor":"#7f7f7f"},
+            "searchKey":"Box,box_use",
+            "props":{"width":750,"top":710,"styleSkin":"ui_Fashion/img_box.png","sizeGrid":"83,55,66,55","name":"box_use","height":250,"centerX":0,"bgColor":"#7f7f7f"},
             "nodeParent":2,
-            "label":"Box",
+            "label":"box_use",
             "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
@@ -256,7 +205,7 @@
                 {
                     "type":"Image",
                     "searchKey":"Image,item_1",
-                    "props":{"skin":"ui_Fashion/img_itemBg.png","name":"item_1","left":50,"centerY":0},
+                    "props":{"skin":"ui_Fashion/img_itemBg.png","name":"item_1","left":50,"centerY":35},
                     "nodeParent":211,
                     "label":"item_1",
                     "isOpen":false,
@@ -292,6 +241,19 @@
                             "child":[
                                 ],
                             "$LOCKED":true
+                        },
+                        {
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"x":32,"top":-80,"skin":"ui_Fashion/img_pageBtnP1.png"},
+                            "nodeParent":212,
+                            "label":"Image",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":233,
+                            "child":[
+                                ]
                         }],
                     "$LOCKED":true,
                     "$HIDDEN":false
@@ -299,7 +261,7 @@
                 {
                     "type":"Image",
                     "searchKey":"Image,item_2",
-                    "props":{"skin":"ui_Fashion/img_itemBg.png","name":"item_2","left":225,"centerY":0},
+                    "props":{"skin":"ui_Fashion/img_itemBg.png","name":"item_2","left":225,"centerY":35},
                     "nodeParent":211,
                     "label":"item_2",
                     "isOpen":false,
@@ -335,6 +297,19 @@
                             "child":[
                                 ],
                             "$LOCKED":true
+                        },
+                        {
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"y":-80,"x":30,"top":-80,"skin":"ui_Fashion/img_pageBtnP2.png"},
+                            "nodeParent":218,
+                            "label":"Image",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":234,
+                            "child":[
+                                ]
                         }],
                     "$LOCKED":true,
                     "$HIDDEN":false
@@ -342,7 +317,7 @@
                 {
                     "type":"Image",
                     "searchKey":"Image,item_3",
-                    "props":{"skin":"ui_Fashion/img_itemBg.png","right":225,"name":"item_3","centerY":0},
+                    "props":{"skin":"ui_Fashion/img_itemBg.png","right":225,"name":"item_3","centerY":35},
                     "nodeParent":211,
                     "label":"item_3",
                     "isOpen":false,
@@ -378,6 +353,19 @@
                             "child":[
                                 ],
                             "$LOCKED":true
+                        },
+                        {
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"y":-80,"x":31,"top":-80,"skin":"ui_Fashion/img_pageBtnP3.png"},
+                            "nodeParent":221,
+                            "label":"Image",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":235,
+                            "child":[
+                                ]
                         }],
                     "$LOCKED":true,
                     "$HIDDEN":false
@@ -385,7 +373,7 @@
                 {
                     "type":"Image",
                     "searchKey":"Image,item_4",
-                    "props":{"skin":"ui_Fashion/img_itemBg.png","right":50,"name":"item_4","centerY":0},
+                    "props":{"skin":"ui_Fashion/img_itemBg.png","right":50,"name":"item_4","centerY":35},
                     "nodeParent":211,
                     "label":"item_4",
                     "isOpen":false,
@@ -421,6 +409,19 @@
                             "child":[
                                 ],
                             "$LOCKED":true
+                        },
+                        {
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"x":32,"top":-80,"skin":"ui_Fashion/img_pageBtnP4.png"},
+                            "nodeParent":215,
+                            "label":"Image",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":236,
+                            "child":[
+                                ]
                         }],
                     "$LOCKED":true,
                     "$HIDDEN":false
@@ -430,18 +431,69 @@
         },
         {
             "x":15,
-            "type":"Label",
-            "searchKey":"Label",
-            "props":{"top":30,"text":"自动截图工具","fontSize":45,"font":"Arial","color":"#000000","centerX":0,"bold":true},
+            "type":"Button",
+            "searchKey":"Button,btn_start",
+            "props":{"var":"btn_start","top":1050,"stateNum":"1","skin":"ui_Fashion/img_btnBuy.png","left":80,"labelSize":36,"labelFont":"SimHei","labelColors":"#000000,#000000,#000000","labelBold":true,"label":"开始","anchorY":0.5,"anchorX":0.5},
             "nodeParent":2,
-            "label":"Label",
-            "isDirectory":false,
+            "label":"btn_start",
+            "isOpen":false,
+            "isDirectory":true,
             "isAniNode":true,
-            "hasChild":false,
-            "compId":210,
+            "hasChild":true,
+            "compId":195,
             "child":[
-                ],
-            "$LOCKED":true
+                {
+                    "type":"Script",
+                    "switchAble":true,
+                    "source":"src/Script/ButtonEff.ts",
+                    "searchKey":"Script,ButtonEff",
+                    "removeAble":true,
+                    "props":{},
+                    "nodeParent":195,
+                    "label":"ButtonEff",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":204,
+                    "child":[
+                        ],
+                    "$LOCKED":true
+                }],
+            "$LOCKED":true,
+            "$HIDDEN":false
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "searchKey":"Button,btn_stop",
+            "props":{"var":"btn_stop","top":1050,"stateNum":"1","skin":"ui_Fashion/img_btnSave.png","right":80,"labelSize":36,"labelFont":"SimHei","labelColors":"#000000,#000000,#000000","labelBold":true,"label":"停止","anchorY":0.5,"anchorX":0.5},
+            "nodeParent":2,
+            "label":"btn_stop",
+            "isOpen":false,
+            "isDirectory":true,
+            "isAniNode":true,
+            "hasChild":true,
+            "compId":196,
+            "child":[
+                {
+                    "type":"Script",
+                    "switchAble":true,
+                    "source":"src/Script/ButtonEff.ts",
+                    "searchKey":"Script,ButtonEff",
+                    "removeAble":true,
+                    "props":{},
+                    "nodeParent":196,
+                    "label":"ButtonEff",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":224,
+                    "child":[
+                        ],
+                    "$LOCKED":true
+                }],
+            "$LOCKED":true,
+            "$HIDDEN":false
         }],
     "animations":[
         {
