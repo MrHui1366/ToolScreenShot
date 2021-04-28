@@ -106,7 +106,7 @@ export default class Role extends Laya.Script {
         for ( let i = 0; i < this.sk_parts.length; i++ ) {
             let sk_part = this.sk_parts[ i ];
             sk_part.play( aniName, isLoop );
-            sk_part.stop();
+            // sk_part.stop();
         }
     }
 
