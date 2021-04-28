@@ -152,7 +152,8 @@ export default class Role extends Laya.Script {
                 break;
         }
         let nowUseID = this.clothing[ skinIndex ];
-        return this.getSkinName[ nowUseID ];
+        let skinName = this.getSkinName( nowUseID );
+        return skinName;
     }
 
     /**
@@ -160,7 +161,7 @@ export default class Role extends Laya.Script {
      * @param nowUseID 时装ID 
      */
     private getSkinName( nowUseID: number ) {
-        let strName: string = '';
+        let strName: string;
         for ( let i = 0; i < skinNameArr.length; i++ ) {
             if ( nowUseID < ( i + 1 ) * 8 ) {
                 strName = skinNameArr[ i ];
