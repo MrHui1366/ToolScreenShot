@@ -6,7 +6,7 @@
     "searchKey":"View,ScreenShotUI",
     "props":{"width":750,"top":0,"sceneColor":null,"runtime":"View/view/ScreenShotUI.ts","right":0,"name":"ScreenShotUI","left":0,"height":1334,"bottom":0},
     "nodeParent":-1,
-    "maxID":240,
+    "maxID":243,
     "label":"ScreenShotUI",
     "isOpen":true,
     "isDirectory":true,
@@ -38,10 +38,27 @@
             "props":{"top":50,"text":"自动截图工具","name":"txt_title","fontSize":45,"font":"Arial","color":"#000000","centerX":0,"bold":true},
             "nodeParent":2,
             "label":"txt_title",
+            "isOpen":true,
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
             "compId":210,
+            "child":[
+                ],
+            "$LOCKED":true
+        },
+        {
+            "x":15,
+            "type":"Label",
+            "searchKey":"Label,txt_time",
+            "props":{"x":237,"width":220,"var":"txt_time","valign":"middle","top":116,"text":"00:00:00","height":30,"fontSize":30,"font":"Arial","color":"#ff0703","centerX":0,"bold":true,"align":"center"},
+            "nodeParent":2,
+            "label":"txt_time",
+            "isOpen":true,
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":242,
             "child":[
                 ],
             "$LOCKED":true
@@ -60,7 +77,6 @@
             "compId":130,
             "child":[
                 {
-                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,img_bg",
                     "props":{"y":0,"x":188,"width":375,"var":"img_bg","skin":"Bg/img_1.jpg","height":500},

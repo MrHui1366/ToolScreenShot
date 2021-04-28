@@ -1,3 +1,4 @@
+import Common from "src/coffee_bean/utils/Common";
 import { FashionShopDataManager, FashionShopTableData } from "src/Data/TableData/FashionShopTableData";
 import RoleManager from "src/Manager/RoleManager";
 import Role from "src/Prefab/Role";
@@ -40,8 +41,16 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
     /** 角色对象 */
     private Role: Role = null;
 
+    /** 当前性别 */
     private nowGender: number = 1;
+
+    /** 当前背景ID */
     private bgID: number = 1;
+
+    private BgNumCount = 10;
+
+    private skinNumCount = 8;
+
 
     constructor () {
         super();
@@ -99,19 +108,43 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     /** 换装 */
     private changeFashion() {
-
-
+        let data: any = [];
+        this.Role.changePartSkin( data );
     }
 
     /** 开始 */
     private startBtn() {
-        console.log( '点击了开始!!!' );
-        this.screenShot();
+        Common.btn_Protect( this.btn_start );
+        Laya.timer.loop( 200, this, this.startFunc )
+    }
+
+    /** 开始执行 */
+    private startFunc() {
+        if ( this.nowGender == 1 ) {
+            if (
+                this.hariIndex == this.skinNumCount &&
+                this.clothesIndex == this.skinNumCount &&
+                this.shoesIndex == this.skinNumCount &&
+                this.faceIndex == this.skinNumCount && this.bgID == this.BgNumCount ) {
+
+
+            }
+
+
+        } else {
+
+
+        }
+
+
+
+
     }
 
     /** 停止 */
     private stopBtn() {
-        console.log( '点击了停止!!!' );
+        Common.btn_Protect( this.btn_stop );
+
     }
 
     /** 截图 */

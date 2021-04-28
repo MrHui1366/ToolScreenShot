@@ -11,6 +11,11 @@ enum E_RoleAniName {
     touchId = 'part_touch_stay',
 }
 
+/** 皮肤名称 */
+const skinNameArr = [
+    'init_Student', 'fall_Ancient', 'simple_Peret', 'england_Time',
+    'candy_Christmas', 'trend_fashion', 'winter_warm', 'sport_suit' ];
+
 /** 角色spine层级 */
 const roleZoderArr = [ 101, 102, 103, 104, 105, 106, 107, 108, 109, 110 ];
 
@@ -147,8 +152,22 @@ export default class Role extends Laya.Script {
                 break;
         }
         let nowUseID = this.clothing[ skinIndex ];
-        let nowTableData = FashionShopDataManager.getInstance().getDataById( nowUseID );
-        return nowTableData.skinName;
+        return this.getSkinName[ nowUseID ];
+    }
+
+    /**
+     * 当前使用的时装ID
+     * @param nowUseID 时装ID 
+     */
+    private getSkinName( nowUseID: number ) {
+        let strName: string = '';
+        for ( let i = 0; i < skinNameArr.length; i++ ) {
+            if ( nowUseID < ( i + 1 ) * 8 ) {
+                strName = skinNameArr[ i ];
+                return strName;
+            }
+        }
+        return strName;
     }
 
     /** 
