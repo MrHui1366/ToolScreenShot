@@ -50,7 +50,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     private BgNumCount = 10;
 
-    private skinNumCount = 8;
+    private skinNumCount = 7;
 
 
     constructor () {
@@ -145,7 +145,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
             CLOG.E( '完成----OK' );
             Laya.timer.clear( this, this.startFunc );
         } else {
-            this.screenShot();
+            // this.screenShot();
             if ( this.faceIndex == this.skinNumCount ) {
                 this.faceIndex = 0;
                 if ( this.shoesIndex == this.skinNumCount ) {
