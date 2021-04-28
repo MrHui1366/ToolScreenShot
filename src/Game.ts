@@ -98,7 +98,7 @@ export default class Game {
         resAry.push( { url: "res/atlas/ui_Fashion.atlas", type: Laya.Loader.ATLAS, cache: true } );
         resAry.push( { url: "res/atlas/FashionShop.atlas", type: Laya.Loader.ATLAS, cache: true } );
         // View
-        resAry.push( { url: "ViewFile/FashionShop.json", type: Laya.Loader.JSON, cache: true } );
+        resAry.push( { url: "ViewFile/ScreenShotUI.json", type: Laya.Loader.JSON, cache: true } );
         let completeHandler = Laya.Handler.create( this, this.preloadComplete );
         let progressHandler = Laya.Handler.create( this, this.preloadProgress, null, false );
         CRes.cPreload( resAry, completeHandler, progressHandler );
