@@ -60,6 +60,7 @@ export default class Role extends Laya.Script {
      * @param clothing 时装数据
      */
     public createRoleSpine( gender: number, clothing: Array<number> ) {
+        this._owner.scale( 0.7, 0.7 );
         this.clothing = clothing;
         this.mF_parts = [];
         this.sk_parts = [];

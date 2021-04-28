@@ -84,7 +84,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     /** 截图 */
     private screenShot() {
-        let pictrue = this.img_bg.drawToCanvas( this.img_bg.width, this.img_bg.height, 235, 10 );
+        let pictrue = this.img_bg.drawToCanvas( this.img_bg.width, this.img_bg.height, this.img_bg.x, this.img_bg.y );
         let dataUrl = pictrue.toBase64( "image/png", 0.9 );
         let img = document.createElement( 'img' );
         img.src = dataUrl;
