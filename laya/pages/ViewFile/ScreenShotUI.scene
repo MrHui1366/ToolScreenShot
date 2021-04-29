@@ -77,9 +77,9 @@
             "compId":130,
             "child":[
                 {
-                    "type":"Image",
-                    "searchKey":"Image,img_bg",
-                    "props":{"y":0,"x":188,"width":375,"var":"img_bg","skin":"Bg/img_1.jpg","height":500},
+                    "type":"Box",
+                    "searchKey":"Box,img_bg",
+                    "props":{"y":0,"x":188,"width":375,"var":"img_bg","height":500},
                     "nodeParent":130,
                     "label":"img_bg",
                     "isOpen":false,

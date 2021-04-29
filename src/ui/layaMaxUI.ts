@@ -26,7 +26,7 @@ export module ui.ViewFile {
     REG("ui.ViewFile.LoadingUI",LoadingUI);
     export class ScreenShotUIUI extends View {
 		public txt_time:Laya.Label;
-		public img_bg:Laya.Image;
+		public img_bg:Laya.Box;
 		public role_root:Laya.Box;
 		public img_hair:Laya.Image;
 		public img_clothes:Laya.Image;

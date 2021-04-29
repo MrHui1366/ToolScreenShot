@@ -48,8 +48,6 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
     /** 当前背景ID */
     private bgID: number = 1;
 
-    private BgNumCount = 10;
-
     private skinNumCount = 7;
 
 
@@ -147,7 +145,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
             Laya.timer.clear( this, this.startFunc );
             CLOG.E( '完成----OK' );
         } else {
-            // this.screenShot();
+            //   this.screenShot();
             if ( this.faceIndex == this.skinNumCount ) {
                 this.faceIndex = 0;
                 if ( this.shoesIndex == this.skinNumCount ) {
