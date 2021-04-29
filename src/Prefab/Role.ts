@@ -102,7 +102,7 @@ export default class Role extends Laya.Script {
         //部位全部加载完毕开始播放动画
         for ( let i = 0; i < this.sk_parts.length; i++ ) {
             let sk_part = this.sk_parts[ i ];
-             sk_part.play( aniName, false );
+            sk_part.play( aniName, false );
         }
     }
 
@@ -199,7 +199,7 @@ export default class Role extends Laya.Script {
      * @param data 时装属性
      */
     private changePartSkin( data: FashionShopTableData ) {
-        console.log( '执行换装：ID:{0},名字:{1}:', data.id, data.name );
+        // console.log( '执行换装：ID:{0},名字:{1}:', data.id, data.name );
         switch ( data.type ) {
             case 0://头发
                 this.sk_parts[ 0 ].showSkinByName( data.skinName );

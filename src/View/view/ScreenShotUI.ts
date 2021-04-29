@@ -59,6 +59,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
         this.initData();
         this.btn_start.on( Laya.Event.CLICK, this, this.startBtn );
         this.btn_stop.on( Laya.Event.CLICK, this, this.stopBtn );
+        this.txt_time.visible = false;
     }
 
     onOpened() {
@@ -99,7 +100,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
         let shoesID = this.shoesList[ this.shoesIndex ].id;
         let faceID = this.faceList[ this.faceIndex ].id;
         this.clothing = [ hariID, clothesID, shoesID, faceID ];
-        console.log( '更新服装数据：{0}，{1}，{2}，{3}', hariID, clothesID, shoesID, faceID );
+        // console.log( '更新服装数据：{0}，{1}，{2}，{3}', hariID, clothesID, shoesID, faceID );
     }
 
     /** 创建角色 */
