@@ -132,7 +132,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
     private startBtn() {
         Common.btn_Protect( this.btn_start );
         CLOG.E( '开始!!!' );
-        Laya.timer.loop( 1, this, this.startFunc )
+        Laya.timer.loop( 200, this, this.startFunc )
     }
 
     private screeNum = 0;
@@ -147,7 +147,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
             Laya.timer.clear( this, this.startFunc );
             CLOG.E( '完成----OK' );
         } else {
-            // this.screenShot();
+            this.screenShot();
             if ( this.faceIndex == this.skinNumCount ) {
                 this.faceIndex = 0;
                 if ( this.shoesIndex == this.skinNumCount ) {
