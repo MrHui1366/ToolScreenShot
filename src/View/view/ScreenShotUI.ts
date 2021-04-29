@@ -146,7 +146,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
             Laya.timer.clear( this, this.startFunc );
             CLOG.E( '完成----OK' );
         } else {
-            //   this.screenShot();
+            this.screenShot();
             if ( this.faceIndex == this.skinNumCount ) {
                 this.faceIndex = 0;
                 if ( this.shoesIndex == this.skinNumCount ) {
@@ -164,9 +164,9 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
                 this.faceIndex++;
             }
             this.upDateRole();
-            this.screeNum++
-            CLOG.E( '截图次数：{0}', this.screeNum );
         }
+        this.screeNum++
+        CLOG.E( '截图次数：{0}', this.screeNum );
     }
 
     /** 刷新角色 */
@@ -186,7 +186,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
     /** 截图 */
     private screenShot() {
         let pictrue = this.img_bg.drawToCanvas( this.img_bg.width, this.img_bg.height, this.img_bg.x, this.img_bg.y );
-        let dataUrl = pictrue.toBase64( "image/png", 0.9 );
+        let dataUrl = pictrue.toBase64( "image/png", 0.8 );
         let img = document.createElement( 'img' );
         img.src = dataUrl;
         let href = dataUrl.replace( /^data:image[^;]*/, "data:image/octet-stream" );
@@ -195,15 +195,12 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
         a.download =
             'img' +
             this.nowGender + '_' +
-            this.bgID + '_' +
             this.clothing[ 0 ] + '_' +
             this.clothing[ 1 ] + '_' +
             this.clothing[ 2 ] + '_' +
             this.clothing[ 3 ] + '.png'
         a.click();
         a.remove();
-
-
     }
 
 
