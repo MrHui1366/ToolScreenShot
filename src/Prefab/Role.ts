@@ -90,21 +90,19 @@ export default class Role extends Laya.Script {
         sk_part.showSkinByName( skinName );
         this.loadCompleteNum++;
         if ( this.loadCompleteNum == roleZoderArr.length ) {
-            this.startPlayPartAni( E_RoleAniName.stayId, true );
+            this.startPlayPartAni( E_RoleAniName.stayId );
         }
     }
 
     /** 
      * 开始播放角色所有部位动作
      * @param  aniName 动画名称
-     * @param  isLoop 是否循环
-     * @param  callBack 播放完毕回调(可选)
      */
-    private startPlayPartAni( aniName: string, isLoop: boolean, callBack?: () => void ) {
+    private startPlayPartAni( aniName: string ) {
         //部位全部加载完毕开始播放动画
         for ( let i = 0; i < this.sk_parts.length; i++ ) {
             let sk_part = this.sk_parts[ i ];
-            sk_part.play( aniName, false );
+             sk_part.play( aniName, false );
         }
     }
 
