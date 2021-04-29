@@ -43,10 +43,7 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
     private Role: Role = null;
 
     /** 当前性别 */
-    private nowGender: number = 1;
-
-    /** 当前背景ID */
-    private bgID: number = 1;
+    private nowGender: number = 2;
 
     private skinNumCount = 7;
 
@@ -138,6 +135,11 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
 
     /** 开始执行 */
     private startFunc() {
+        if ( this.screeNum == 50 ) {
+            Laya.timer.clear( this, this.startFunc );
+            this.screeNum = 0;
+        }
+
         if ( this.hariIndex == this.skinNumCount &&
             this.clothesIndex == this.skinNumCount &&
             this.shoesIndex == this.skinNumCount &&
