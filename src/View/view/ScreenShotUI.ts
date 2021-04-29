@@ -143,8 +143,9 @@ export default class ScreenShotUI extends ui.ViewFile.ScreenShotUIUI {
             this.clothesIndex == this.skinNumCount &&
             this.shoesIndex == this.skinNumCount &&
             this.faceIndex == this.skinNumCount ) {
-            CLOG.E( '完成----OK' );
+            this.screenShot();
             Laya.timer.clear( this, this.startFunc );
+            CLOG.E( '完成----OK' );
         } else {
             // this.screenShot();
             if ( this.faceIndex == this.skinNumCount ) {
