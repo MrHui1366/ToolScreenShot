@@ -56,7 +56,6 @@ export default class Role extends Laya.Script {
 
     onEnable() {
         this._owner = this.owner as Laya.Sprite;
-        this._owner.on( Laya.Event.CLICK, this, this.click_ShopRole );
     }
 
     /**
@@ -105,8 +104,7 @@ export default class Role extends Laya.Script {
         //部位全部加载完毕开始播放动画
         for ( let i = 0; i < this.sk_parts.length; i++ ) {
             let sk_part = this.sk_parts[ i ];
-            sk_part.play( aniName, isLoop );
-            // sk_part.stop();
+            sk_part.play( aniName, false );
         }
     }
 
@@ -224,18 +222,6 @@ export default class Role extends Laya.Script {
             default:
                 console.log( data.type + ',changePartskin is error!' );
                 break;
-        }
-    }
-
-    /** 点击事件--商店中的角色 */
-    private click_ShopRole() {
-        if ( this.isClick ) {
-            this.isClick = false;
-            let touchAniNames = E_RoleAniName.touchId;
-            this.startPlayPartAni( touchAniNames, false, () => {
-                this.startPlayPartAni( E_RoleAniName.stayId, true );
-                this.isClick = true;
-            } );
         }
     }
 
